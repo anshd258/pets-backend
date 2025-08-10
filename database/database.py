@@ -8,7 +8,7 @@ database = None
 
 async def connect_to_mongo():
     global client, database
-    mongo_url = os.getenv("MONGO_URL", "mongodb://localhost:27017")
+    mongo_url = os.getenv("MONGODB_URL")
     client = AsyncIOMotorClient(mongo_url)
     database = client.pet_adoption_db
     print("Connected to MongoDB")
