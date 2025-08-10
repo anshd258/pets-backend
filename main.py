@@ -11,6 +11,7 @@ from core.utils.seed import seed_database
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     await connect_to_mongo()
+    await seed_database()
     yield
     await close_mongo_connection()
 
